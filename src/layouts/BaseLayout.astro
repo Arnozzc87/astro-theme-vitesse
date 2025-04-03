@@ -1,6 +1,7 @@
 ---
 import { fade } from 'astro:transitions'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
+import 'virtual:uno.css'
 import BaseHead from '@/components/BaseHead.astro'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
@@ -13,12 +14,12 @@ const { ...head } = Astro.props
 <html lang="en">
   <head>
     <BaseHead {...head} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="bg-main text-main min-h-screen font-sans w-full bg-dot">
     <Header client:load />
     <main
-      class="grow max-w-3xl mx-auto sm:pt-36 pt-26 pb-16 px-6 relative"
+      class="grow max-w-6xl mx-auto sm:pt-28 pt-20 pb-16 px-4 md:px-6 relative"
       transition:animate={fade({ duration: '0.4s' })}
     >
       <slot />
